@@ -96,7 +96,10 @@ view: users {
     type: count
     drill_fields: [detail*]
   }
-
+measure: avgage {
+  type: average
+  sql: ${age} ;;
+}
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
