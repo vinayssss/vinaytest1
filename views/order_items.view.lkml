@@ -4,9 +4,28 @@ view: order_items {
   drill_fields: [id]
 
   dimension: id {
+    primary_key: no
+    type: number
+    sql: ${TABLE}.id ;;
+
+  }
+  dimension: ids {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    html:
+    {% if value > 10 %}
+      <font color="darkgreen">{{ rendered_value }}</font>
+    {% elsif value > 11 %}
+      <font color="goldenrod">{{ rendered_value }}</font>
+    {% else %}
+      <font color="darkred">{{ rendered_value }}</font>
+    {% endif %} ;;
+  }
+
+  dimension: value {
+    sql: ${TABLE}.status ;;
+    type: string
   }
 
   dimension_group: created {
