@@ -91,7 +91,21 @@ view: users {
     type: number
     sql: length(${full_name}) ;;
   }
-
+  dimension: color{
+    type: string
+    sql: ${full_name} ;;
+    html: {% if value >15 %}
+    <<font color="red">{{ rendered_value }}</font>
+    {% elsif value > 20 %}
+    <font color="yellow">{{ rendered_value }}</font>
+    {% else %}
+      <font color="blue">{{ rendered_value }}</font>
+    {% endif %};;
+  }
+  dimension: value {
+    sql: ${length};;
+    type: number
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
