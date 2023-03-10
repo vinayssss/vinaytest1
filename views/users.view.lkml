@@ -92,7 +92,7 @@ view: users {
     sql: length(${full_name}) ;;
   }
   dimension: color{
-    type: string
+    type: number
     sql: ${length} ;;
     html: {% if value >15 %}
     <<font color="red">{{ rendered_value }}</font>
