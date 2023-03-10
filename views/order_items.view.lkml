@@ -106,6 +106,10 @@ measure: total_revenue {
 }
   measure: count_without_liquid {
     type: count
+    link: {
+      label: "SSSS"
+      url: "https://www.youtube.com/"
+    }
   }
 
   measure: count_with_liquid {
