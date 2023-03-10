@@ -93,7 +93,7 @@ view: users {
   }
   dimension: color{
     type: string
-    sql: ${full_name} ;;
+    sql: ${length} ;;
     html: {% if value >15 %}
     <<font color="red">{{ rendered_value }}</font>
     {% elsif value > 20 %}
@@ -103,8 +103,8 @@ view: users {
     {% endif %};;
   }
   dimension: value {
-    sql: ${length};;
-    type: number
+    sql: ${full_name};;
+    type: string
   }
   measure: count {
     type: count
