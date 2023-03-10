@@ -93,16 +93,16 @@ view: order_items {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
-  dimension: total_revenue {
-    type: number
-    sql: sum(${sale_price});;
-  }
+
 
   measure: count {
     type: count
     drill_fields: [detail*]
   }
-
+measure: total_revenue {
+  type: sum
+  sql: ${sale_price} ;;
+}
 
   # ----- Sets of fields for drilling ------
   set: detail {
