@@ -104,6 +104,17 @@ measure: total_revenue {
   type: sum
   sql: ${sale_price} ;;
 }
+  measure: count_without_liquid {
+    type: count
+  }
+
+  measure: count_with_liquid {
+    type: count
+    link: {
+      label: "Status Count"
+      url: "https://www.google.com/search?q={{ status._value }}"
+    }
+  }
 
   # ----- Sets of fields for drilling ------
   set: detail {

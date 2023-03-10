@@ -222,6 +222,8 @@ explore: products {
 
 explore: users {}
 
+
+
 explore: transaction_detail {
   join: transaction_detail__items {
     view_label: "Transaction Detail: Items"
