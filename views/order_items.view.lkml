@@ -118,6 +118,7 @@ view: order_items {
   measure: count {
     type: count
     drill_fields: [detail*]
+    filters: [created_year: "2018"]
   }
 measure: total_revenue {
   type: sum
